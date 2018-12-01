@@ -1,26 +1,41 @@
 \ProvidesPackage{preamble}
-% russian settings
+% correct russian settings
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
 \usepackage[T2A]{fontenc}
 \usepackage{cmap}
+
 % page settings
 \pdfcompresslevel=9
 \usepackage[left=30mm,right=10mm,top=20mm,bottom=20mm,bindingoffset=0cm]{geometry}
+
+% color and linkable reference
+\usepackage{xcolor}
+\usepackage{hyperref}
+\definecolor{linkcolor}{HTML}{000000}
+\definecolor{urlcolor}{HTML}{000000}
+
+% pdf settings
+\hypersetup{pdfstartview=FitH, linkcolor=linkcolor, urlcolor=urlcolor, colorlinks=true}
+
 % image settings
 \usepackage[pdftex]{graphicx}
-\graphicspath{{images/}}
+\graphicspath{{image/}}
 \addto\captionsrussian{\renewcommand{\figurename}{Рисунок}}
+
 % captions settings
 \usepackage[labelsep=endash,nooneline]{caption}
 \captionsetup{figurewithin=section}
 \captionsetup[table]{justification=raggedright}
 \captionsetup[figure]{justification=centering}
+
 % line spacing settings
 \usepackage[onehalfspacing]{setspace}
+
 % paragraph indent settings
 \usepackage{indentfirst}
 \setlength{\parindent}{15mm}
+
 % section title settings
 \usepackage[explicit]{titlesec}
 \usepackage{textcase}
@@ -30,20 +45,31 @@
 \titlespacing{\section}{0pt}{*0}{*0}
 \titlespacing{\subsection}{0pt}{*0}{*0}
 \titlespacing{\subsubsection}{0pt}{*0}{*0}
+
 % math settings
 \usepackage{mathtools}
 \numberwithin{equation}{section}
+
 % table settings
 \usepackage{multirow}
 \numberwithin{table}{section}
 \usepackage{makecell}
 \usepackage{array}
+\usepackage{longtable}
+% команда для переноса строки внутри ячейки таблицы
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+% plot settings
+%\usepackage{gnuplottex}
+
 % lists settings
 \usepackage{enumitem}
 \setlist{nolistsep, itemsep=0pt,parsep=0pt,leftmargin=0cm}
 \setlist[itemize]{itemindent=2cm}
 \usepackage{listings}
 \setlist[enumerate]{itemindent=2cm}
+
 % headers and page numbering settings
 \usepackage{fancyhdr}
 \pagestyle{fancy}
