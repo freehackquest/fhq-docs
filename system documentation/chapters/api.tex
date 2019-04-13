@@ -1,0 +1,35 @@
+\begin{center}
+Описание API
+\end{center}
+
+Connection \par
+\vspace{\baselineskip}
+Connection string: ws://undefined:undefined/
+Or if enabled ssl: wss://undefined:undefined/ - with ssl
+\vspace{\baselineskip}
+For example:
+var socket = new WebSocket("wss://freehackquest.com:undefined/");
+\vspace{\baselineskip}
+
+
+Start communication with server \par
+\vspace{\baselineskip}
+Fisrt command must be login or token if you have api token.
+\vspace{\baselineskip}
+For example:
+socket.send(JSON.stringify(\{cmd: "login", "m": "m100", email: "email", password: "password"\}))
+\vspace{\baselineskip}
+
+Implementation
+\vspace{\baselineskip}
+You can find this:
+\begin{itemize}
+\item config: https://freehackquest.com/js/fhq.ws.config.js;
+\item wrapper by api: https://freehackquest.com/js/fhq.ws.js.
+\end{itemize}
+\vspace{\baselineskip}
+
+
+\vspace{\baselineskip}
+	
+
